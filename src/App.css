@@ -33,7 +33,7 @@ img {
   margin-bottom: 3rem;
 }
 .title span {
-  color: #8c12f0;
+  color: var(--color-green);
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 800;
