@@ -124,19 +124,19 @@ export const workNavs = [
 ]
 
 export const contacts = [
-  {
+   {
     id: 1,
-    icon: <FaMapMarkerAlt />,
-    infoText: "16 Road, TharKayTa , Yangon"
+    icon: <FaPaperPlane />,
+    infoText: "rob.martel32@gmail.com"
   },
   {
     id: 2,
-    icon: <FaPaperPlane />,
-    infoText: "abee02@gmail.com"
+    icon: <FaPhoneAlt />,
+    infoText: "+1 123-456-7890"
   },
   {
     id: 3,
-    icon: <FaPhoneAlt />,
-    infoText: "+959-883-271-929"
-  }
+    icon: <FaMapMarkerAlt />,
+    infoText: "Canada"
+  },
 ]
