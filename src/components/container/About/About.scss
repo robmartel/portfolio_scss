@@ -33,6 +33,10 @@
             margin-top: 2rem;
         }
 
+        @media screen and (max-width: 780px) {
+            margin-left: 1rem;
+        }
+
         p {
             font-size: 0.85rem;
             margin-bottom: 1rem;
