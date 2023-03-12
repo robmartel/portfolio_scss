@@ -1,6 +1,6 @@
 import { FaHtml5, FaCss3, FaNodeJs, FaReact, FaSass, FaFigma, FaPhoneAlt, FaUser, FaMapMarkerAlt, FaPaperPlane, FaDribbble, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { DiJavascript } from "react-icons/di";
-import { SiTypescript } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
 import { BsMedium } from "react-icons/bs";
 import portfolio from "./assets/portfolio.jpg"
 import work1 from "./assets/work1.png";
@@ -40,49 +40,44 @@ export const bios = [
   }
 ]
 
-export const icons = [<FaHtml5 />, <FaCss3 />, <DiJavascript />, <SiTypescript />, <FaReact />, <FaNodeJs />, <FaSass />, <FaFigma />]
+export const icons = [<FaHtml5 />, <FaCss3 />, <DiJavascript />, <FaReact />, <FaNodeJs />, <FaSass />, <SiMongodb />, <FaFigma />]
 
 export const experiences = [
   {
     id: 1,
     year: "2022",
-    position: "Senior Web Developer",
-    company: "shop.com.mm"
+    position: "Freelance Web Developer",
+    company: "xyz "
   },
   {
-    di: 2,
+    id: 2,
     year: "2021",
-    position: "Junior Web Developer",
-    company: "shop.com.mm"
+    position: "FullStack Developer",
+    company: "Self Employed"
   },
   {
     id: 3,
     year: "2019",
-    position: "Intern Web Developer",
-    company: "shop.com.mm"
+    position: "Beginning of my Journey",
+    company: "Nucamp Bootcamp"
   }
 ]
 export const finishes = [
   {
     id: 1,
-    number: '6+',
+    number: '2+',
     itemName: "Years Of Experience"
   },
   {
     id: 2,
-    number: "150+",
+    number: "20+",
     itemName: "Satisfied Customers"
   },
   {
     id: 3,
-    number: "669+",
-    itemName: "Designed Items"
+    number: "15+",
+    itemName: "Projects"
   },
-  {
-    id: 4,
-    number: "117+",
-    itemName: "Clients Served"
-  }
 ]
 export const workImages = [
   {
