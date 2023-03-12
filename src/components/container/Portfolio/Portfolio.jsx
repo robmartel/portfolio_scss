@@ -1,11 +1,112 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import './Portfolio.scss';
+
+import { workNavs } from '../../../Data';
+import { workImages } from '../../../Data';
+import { FiGithub, FiEye } from 'react-icons/fi';
+
+import { motion } from 'framer-motion';
 
 const Portfolio = () => {
-  return (
-    <div className="container" id="portfolio">
-      <h1>Portfolio</h1>
-    </div>
-  )
-}
+  const [tab, setTab] = useState({ name: 'all' });
+  const [works, setWorks] = useState([]);
+  const [active, setActive] = useState(0);
 
-export default Portfolio
+  useEffect(() => {
+    if (tab.name === 'all') {
+      setWorks(workImages);
+    } else {
+      const newWork = workImages.filter((workImage) => {
+        return workImage.category.toLowerCase() === tab.name;
+      });
+      setWorks(newWork);
+    }
+  }, [tab]);
+
+  const activeTab = (e, index) => {
+    setTab({ name: e.target.textContent.toLowerCase() });
+    setActive(index);
+  };
+
+  return (
+    <div
+      className='container'
+      id='portfolio'
+    >
+      <div className='title'>
+        <span>My Work</span>
+        <h1>Projects</h1>
+      </div>
+
+      {/* Buttons */}
+      <div className='buttons'>
+        {workNavs.map((workNav, index) => {
+          return (
+            <button
+              key={index}
+              onClick={(e) => activeTab(e, index)}
+              className={`${active === index ? 'active' : ''}`}
+            >
+              {workNav}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Project Cards */}
+      <div className='workImages'>
+        {works.map((work) => {
+          return (
+            <div
+              className='workImage'
+              key={work.id}
+            >
+              <img
+                src={work.img}
+                alt='work-image'
+              />
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: [0, 1] }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                className='hoverLayer'
+              >
+                <motion.a
+                  href='#'
+                  whileView={{ scale: [0, 1] }}
+                  whileHover={{ scale: [1, 1.1] }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <FiGithub />
+                </motion.a>
+                <motion.a
+                  href='#'
+                  whileView={{ scale: [0, 1] }}
+                  whileHover={{ scale: [1, 1.1] }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <FiEye />
+                </motion.a>
+              </motion.div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* contact banner */}
+      <div className='talk'>
+        <div className='talk_left'>
+          <h3>
+            So, let's talk about <br />
+            <span>YOUR next project</span>
+          </h3>
+        </div>
+        <div className='talk_right'>
+          <a href='#contact'>Contact Me</a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Portfolio;
