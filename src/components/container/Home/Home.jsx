@@ -5,8 +5,23 @@ import portfolio from '../../../assets/portfolio.jpg';
 import { motion } from 'framer-motion';
 
 const Home = () => {
+  const moveVariants = {
+    animation: {
+      y: [0, -15],
+      transition: {
+        repeat: 3,
+        duration: 2,
+        delay: 2
+      }
+
+    }
+  }
+
   return (
-    <div
+    <motion.div
+      initial={{ y: -15, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 2, delay: 0.5 }}
       className='container'
       id='home'
     >
@@ -25,9 +40,10 @@ const Home = () => {
           Passionate <br /> to create innovative <br /> web products.
         </span>
         <motion.a
-          href='contact'
+          href='#contact'
+          variants={moveVariants}
           whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.3 }}
+          animate='animation'
         >
           Connect with me
         </motion.a>
@@ -35,7 +51,7 @@ const Home = () => {
         <div className='freelance'>Freelancer</div>
         <div className='fullstack'>Full Stack</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

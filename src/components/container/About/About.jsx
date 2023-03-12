@@ -11,18 +11,30 @@ const About = () => {
       className='container'
       id='about'
     >
-      <div className='title'>
+     <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ y: [-50, 0], opacity: 1 }}
+        className="title">
         <span>Who Am I?</span>
         <h1>About Me</h1>
-      </div>
-      <div className='about_container'>
-        <div className='about_left'>
-          <img
-            src={portfolio}
-            alt='about_image'
+      </motion.div>
+
+      <div className="about_container">
+        <motion.div
+          initial={{ x: 0, opacity: 0 }}
+          whileInView={{ x: [-250, 0], opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="about_left">
+          <motion.img src={portfolio}
+            whileHover={{ y: -48, x: -55 }}
+            transition={{ duration: 0.3 }}
           />
-        </div>
-        <div className='about_right'>
+        </motion.div>
+        <motion.div 
+        className='about_right'
+          initial={{x: 0, opacity: 0}}
+          whileInView={{x: [250, 0], opacity: 1}}
+          transition={{duration: 1}}>
           <p>
             This is where you write a bunch of stuff about me. Thing like you
             love walks in the rain, and rainbows and lollipops. This is the
@@ -51,7 +63,7 @@ const About = () => {
           >
             Download Resume
           </motion.a>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

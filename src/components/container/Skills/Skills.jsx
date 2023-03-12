@@ -13,7 +13,10 @@ const Skills = () => {
       className='container'
       id='skills'
     >
-      <div className='title'>
+      <div 
+      initial={{opacity: 0}}
+      whileInView={{y: [-50, 0], opacity: 1}}
+      className='title'>
         <span>What are my skills?</span>
         <h1>Skills & Experience</h1>
       

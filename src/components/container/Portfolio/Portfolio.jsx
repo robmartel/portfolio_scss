@@ -33,13 +33,21 @@ const Portfolio = () => {
       className='container'
       id='portfolio'
     >
-      <div className='title'>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ y: [-50, 0], opacity: 1 }}
+        className='title'
+      >
         <span>My Work</span>
         <h1>Projects</h1>
-      </div>
+      </motion.div>
 
       {/* Buttons */}
-      <div className='buttons'>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ y: [-50, 0], opacity: 1 }}
+        className='buttons'
+      >
         {workNavs.map((workNav, index) => {
           return (
             <button
@@ -51,10 +59,16 @@ const Portfolio = () => {
             </button>
           );
         })}
-      </div>
+      </motion.div>
 
       {/* Project Cards */}
-      <div className='workImages'>
+      <motion.div
+        initial={{ x: 0, opacity: 0 }}
+        whileInView={{ x: [-250, 0], opacity: 1 }}
+        transition={{ duration: 1 }}
+        exit={{ opacity: 0, y: -50 }}
+        className='workImages'
+      >
         {works.map((work) => {
           return (
             <div
@@ -91,20 +105,29 @@ const Portfolio = () => {
             </div>
           );
         })}
-      </div>
+      </motion.div>
 
       {/* contact banner */}
-      <div className='talk'>
+      <motion.div
+        initial={{ x: 0, opacity: 0 }}
+        whileInView={{ x: [250, 0], opacity: 1 }}
+        transition={{ duration: 1 }}
+        className='talk'
+      >
         <div className='talk_left'>
           <h3>
             So, let's talk about <br />
             <span>YOUR next project</span>
           </h3>
         </div>
-        <div className='talk_right'>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3 }}
+          className='talk_right'
+        >
           <a href='#contact'>Contact Me</a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
