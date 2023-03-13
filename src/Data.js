@@ -1,7 +1,6 @@
-import { FaHtml5, FaCss3, FaNodeJs, FaReact, FaSass, FaFigma, FaPhoneAlt, FaUser, FaMapMarkerAlt, FaPaperPlane, FaDribbble, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaHtml5, FaCss3, FaNodeJs, FaReact, FaSass, FaGitSquare, FaPhoneAlt, FaUser, FaMapMarkerAlt, FaPaperPlane, FaGithubSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { DiJavascript } from "react-icons/di";
 import { SiMongodb } from "react-icons/si";
-import { BsMedium } from "react-icons/bs";
 import portfolio from "./assets/portfolio.jpg"
 import work1 from "./assets/work1.png";
 import work2 from "./assets/work2.png";
@@ -13,10 +12,9 @@ import work6 from "./assets/work6.png";
 export const navLinks = ["home", "about", "skills", "portfolio", "contact"]
 
 export const socialIcons = [
-  <FaDribbble />,
-  <FaInstagram />,
+  <FaGithubSquare />,
+  // <FaInstagram />,
   <FaLinkedin />,
-  <BsMedium />
 ]
 
 export const bios = [
@@ -40,29 +38,29 @@ export const bios = [
   }
 ]
 
-export const icons = [<FaHtml5 />, <FaCss3 />, <DiJavascript />, <FaReact />, <FaNodeJs />, <FaSass />, <SiMongodb />, <FaFigma />]
+export const icons = [<FaHtml5 />, <FaCss3 />, <DiJavascript />, <FaReact />, <FaNodeJs />, <FaSass />, <SiMongodb />, <FaGitSquare />]
 
 export const experiences = [
   {
     id: 1,
-    year: "2022",
+    year: "2023",
     position: "Freelance Web Developer",
-    company: "xyz "
-  },
-  {
-    id: 2,
-    year: "2021",
-    position: "FullStack Developer",
     company: "Self Employed"
   },
   {
+    id: 2,
+    year: "2022",
+    position: "Graduated from Front-end, Back-end and Fullstack bootcamp",
+    company: "Nucamp"
+  },
+  {
     id: 3,
-    year: "2019",
+    year: "2021",
     position: "Beginning of my Journey",
-    company: "Nucamp Bootcamp"
+    company: "Nucamp"
   }
 ]
-export const finishes = [
+export const highlights = [
   {
     id: 1,
     number: '2+',

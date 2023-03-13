@@ -11,11 +11,10 @@ const Home = () => {
       transition: {
         repeat: 3,
         duration: 2,
-        delay: 2
-      }
-
-    }
-  }
+        delay: 2,
+      },
+    },
+  };
 
   return (
     <motion.div
@@ -25,12 +24,15 @@ const Home = () => {
       className='container'
       id='home'
     >
+      {/* Profile Image */}
       <div className='profile'>
         <img
           src={portfolio}
           alt='portfolio-image'
         />
       </div>
+
+      {/* Profile Heading */}
       <div className='profile_text'>
         <h3 className='name'>
           Hey, I'm <span>Rob Martel</span>
@@ -39,6 +41,8 @@ const Home = () => {
         <span className='text'>
           Passionate <br /> to create innovative <br /> web products.
         </span>
+
+        {/* Contact Button */}
         <motion.a
           href='#contact'
           variants={moveVariants}
@@ -47,6 +51,8 @@ const Home = () => {
         >
           Connect with me
         </motion.a>
+
+        {/* Skills */}
         <div className='web'>Web Developer</div>
         <div className='freelance'>Freelancer</div>
         <div className='fullstack'>Full Stack</div>

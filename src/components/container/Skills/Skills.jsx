@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Skills.scss';
 
 import { experiences } from '../../../Data';
-import { finishes } from '../../../Data';
+import { highlights } from '../../../Data';
 import { icons } from '../../../Data';
 
 const Skills = () => {
@@ -13,29 +13,32 @@ const Skills = () => {
       className='container'
       id='skills'
     >
-      <div 
-      initial={{opacity: 0}}
-      whileInView={{y: [-50, 0], opacity: 1}}
-      className='title'>
+      <div
+        initial={{ opacity: 0 }}
+        whileInView={{ y: [-50, 0], opacity: 1 }}
+        className='title'
+      >
         <span>What are my skills?</span>
         <h1>Skills & Experience</h1>
-      
-      <div className='select'>
-        <button
-          className={active === 1 ? 'active' : ''}
-          onClick={() => setActive(1)}
-        >
-          Skills
-        </button>
-        <button
-          className={active === 2 ? 'active' : ''}
-          onClick={() => setActive(2)}
-        >
-          Experience
-        </button>
+
+        {/* Skills & Experience Buttons */}
+        <div className='select'>
+          <button
+            className={active === 1 ? 'active' : ''}
+            onClick={() => setActive(1)}
+          >
+            Skills
+          </button>
+          <button
+            className={active === 2 ? 'active' : ''}
+            onClick={() => setActive(2)}
+          >
+            Experience
+          </button>
         </div>
       </div>
 
+      {/* Skills Icons */}
       <div className='skills'>
         {active === 1 &&
           icons.map((icon, index) => {
@@ -49,6 +52,8 @@ const Skills = () => {
             );
           })}
       </div>
+
+      {/* Experience Section */}
       <div className='experiences'>
         {active === 2 &&
           experiences.map((experience) => {
@@ -67,16 +72,18 @@ const Skills = () => {
           })}
       </div>
 
-      <div className="finishes_container">
-        {finishes.map((finish) => {
+      {/* Highlight Banner */}
+      <div className='highlight_container'>
+        {highlights.map((highlight) => {
           return (
-            <div className="finishes" key={finish.id}>
-              <div className="number">{finish.number}</div>
-              <div className="item_name">
-                {finish.itemName}
-              </div>
+            <div
+              className='highlights'
+              key={highlight.id}
+            >
+              <div className='number'>{highlight.number}</div>
+              <div className='item_name'>{highlight.itemName}</div>
             </div>
-          )
+          );
         })}
       </div>
     </div>

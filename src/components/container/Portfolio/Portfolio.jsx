@@ -107,7 +107,7 @@ const Portfolio = () => {
         })}
       </motion.div>
 
-      {/* contact banner */}
+      {/* Contact Banner */}
       <motion.div
         initial={{ x: 0, opacity: 0 }}
         whileInView={{ x: [250, 0], opacity: 1 }}

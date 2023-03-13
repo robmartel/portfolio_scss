@@ -28,6 +28,13 @@
          align-items: center;
          justify-content: center;
          cursor: pointer;
+
+         &:hover {
+            background: var(--color-green);
+         }
+    }
+    .logo_link {
+        text-decoration: none;
     }
     .social_icons {
      display: flex;
@@ -46,6 +53,7 @@
          
          &:hover {
              opacity: 1;
+             color: var(--color-green);
          }
         }
         
