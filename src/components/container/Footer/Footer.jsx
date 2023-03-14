@@ -3,7 +3,7 @@ import './Footer.scss';
 
 import { motion } from 'framer-motion';
 import { navLinks } from '../../../Data';
-import { socialIconFooter } from '../../../Data';
+import { socialIcons } from '../../../Data';
 
 const Footer = () => {
   return (
@@ -13,39 +13,44 @@ const Footer = () => {
       transition={{ duration: 1.5 }}
       className='footer'
     >
-      <div className="footer_content">
+      <div className='footer_content'>
         <h3>rob martel</h3>
         <p>This is where i say things that make it look great!</p>
         <div className='social_icons'>
-          {socialIconFooter.map((socialIcon) => {
-            return <div className="svg" key={socialIcon.id}>
-              <a className="social_link" href={socialIcon.value}>
-              {socialIcon.icon}
-              </a>
-              </div>;
-          })}
-        </div>
-        <div className="footer_bottom">
-          <p>copyright &copy;2023 <a href="#">rob martel</a> </p>
-     
-
-      <div className="footer_menu">
-          <ul className="menu_links">
-          {navLinks.map((navlink, index) => {
+          {socialIcons.map((socialIcon) => {
             return (
-              <li key={index}>
+              <div
+                className='svg'
+                key={socialIcon.id}
+              >
                 <a
-                  href={`#${navlink}`}
-                  // onClick={() => setToggle(false)}
+                  className='social_link'
+                  href={socialIcon.value}
+                  target='_blank'
                 >
-                  {navlink}
+                  {socialIcon.icon}
                 </a>
-              </li>
+              </div>
             );
           })}
-          </ul>
-      </div>
-      </div>
+        </div>
+        <div className='footer_bottom'>
+          <p>
+            copyright &copy;2023 <a href='#'>rob martel</a>{' '}
+          </p>
+
+          <div className='footer_menu'>
+            <ul className='menu_links'>
+              {navLinks.map((navlink, index) => {
+                return (
+                  <li key={index}>
+                    <a href={`#${navlink}`}>{navlink}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
       </div>
     </motion.div>
   );
@@ -53,8 +58,8 @@ const Footer = () => {
 
 export default Footer;
 
-
-{/* <div className='copyright'>
+{
+  /* <div className='copyright'>
         <p>
           Copyright&copy;2023 All rights reserved | Created by
           <span> Rob Martel</span>
@@ -68,4 +73,5 @@ export default Footer;
             return <div key={index}>{socialIcon}</div>;
           })}
         </div>
-      </div> */}
+      </div> */
+}

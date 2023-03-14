@@ -52,8 +52,11 @@ const Navbar = () => {
       <div className='Nav_container'>
         {/* Logo */}
         <div className='logo'>
-          <a href="#" className="logo_link">
-          <h3>RM</h3>
+          <a
+            href='#'
+            className='logo_link'
+          >
+            <h3>RM</h3>
           </a>
         </div>
 
@@ -70,8 +73,17 @@ const Navbar = () => {
 
         {/* Social Media Icons */}
         <div className='social_icons'>
-          {socialIcons.map((socialIcon, index) => {
-            return <div key={index}>{socialIcon}</div>;
+          {socialIcons.map((socialIcon) => {
+            return (
+              <div key={socialIcon.id}>
+                <a
+                  href={socialIcon.value}
+                  target='_blank'
+                >
+                  {socialIcon.icon}
+                </a>
+              </div>
+            );
           })}
         </div>
 
