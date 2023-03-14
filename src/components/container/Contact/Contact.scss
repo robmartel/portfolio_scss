@@ -33,7 +33,7 @@
         width: 35px;
         height: 35px;
         background: var(--color-green);
-        color: var(--color-white);
+        color:var(--color-white);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -62,7 +62,7 @@
         }
 
         svg {
-          font-size: 1.3rem;
+          font-size: 1.5rem;
         }
       }
     }
@@ -109,11 +109,18 @@
       border-radius: 10px;
       font-size: 0.85rem;
       width: 4.2rem;
+      border: 1px solid transparent;
+
+      &:hover {
+        background: var(--color-white);
+        border: 1px solid var(--color-green);
+      }
     }
     a {
       text-decoration: none;
       color: var(--color-white);
       text-transform: capitalize;
+     
     }
   }
 }

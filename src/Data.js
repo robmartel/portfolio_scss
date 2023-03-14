@@ -17,6 +17,19 @@ export const socialIcons = [
   <FaLinkedin />,
 ]
 
+export const socialIconFooter = [
+  {
+    id: 1,
+    icon: <FaGithubSquare />,
+    value: "https://google.com"
+  },
+  {
+    id: 2,
+    icon: <FaLinkedin />,
+    value: "https://linkedin.com"
+  }
+]
+
 export const bios = [
   {
     id: 1,
